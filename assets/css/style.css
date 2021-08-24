@@ -1,0 +1,201 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --height : 46px;
+}
+
+body{
+    font-family:'Lato',sans-serif ;
+    font-size: 100%;
+}
+
+.clearfix{
+    clear: both;
+}
+
+#main{
+
+}
+
+#header{
+    height: 46px;
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+#nav{
+   display: inline-block; 
+
+}
+#nav li {
+    float: left;
+    list-style-type: none;
+   /* display: inline-block;*/
+    position: relative;
+    font-weight : 500;
+    font-size: 15px;
+}
+#nav > li >a{
+    color: white;
+    text-align: center;
+}
+
+#nav li a{
+    
+    text-decoration: none;
+    color: white;
+    line-height: 46px;
+    padding: 0px 24px;
+    display: block  ;
+    
+}
+#nav li:hover .subnav {
+    display: block;
+}
+#nav > li:hover > a,
+#nav .subnav:hover li:hover a{
+    background-color: #CCC;
+    color:black;
+    
+}
+#nav .subnav{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    width: 160px;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.3); 
+}
+#nav .subnav a{
+    color:black;
+    padding: 0 16px;
+    line-height: 38px; 
+}
+#nav .subnav li{
+    width: 100%;
+}
+#nav .nav-arrow-down{
+    font-size: 12px;
+}
+#search-btn{
+    display: inline-block;
+    
+}
+#header #search-btn{
+    float: right;
+    padding: 0 24px;
+}
+#search-btn .search-icon {
+    /*font-size: 14px;*/
+    color: white;
+    line-height: var(--height);
+}
+#header #search-btn:hover {
+    background-color: red;
+}
+
+
+#slider{
+    margin-top: var(--height);
+    width: 100%;
+}
+
+#slider {
+    position: relative;
+}
+
+#slider .text-content{
+    position: absolute; 
+    text-align: center;
+    bottom: 47px;
+    width: 100%;
+    color: white;
+
+}
+
+#slider .text-heading{
+    font-size: 24px;
+    font-weight: 500;
+}
+
+#slider .text-description{
+    font-size: 15px;
+    padding-top: 25px;
+
+}
+
+
+#content{
+    
+}
+#content .content-heading{
+    background-color: #fff;
+    color: black;
+    margin-left:  auto;
+    margin-right: auto;
+    padding: 64px 16px; 
+    text-align: center;
+    /*width: 100%;*/
+    display: block;
+    max-width: 800px;
+}   
+#content .content-heading .content-paragraph{
+    text-align: justify;
+    margin: 15px 0px 0px;
+    font-size: 15px;
+    line-height: 1.4;
+}
+#content .content-heading .content-title{
+    margin: 10px 0px;
+    font-size: 30px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+#content .content-heading .content-slogan{
+    margin: 15px 0px;
+    font-size: 15px;
+    opacity: 0.6;
+}
+
+#content .content-middle{
+    background-color: black;
+    color: white;
+}
+
+#content .content-footer{
+    background-color: white;
+}
+
+#content .content-member{
+    padding: 47px 0px 32px ;
+}
+#content  .member-item{
+    float: left;
+    width: 33.33333%;
+}
+#content .content-member-img{
+    width: 60%;
+    border-radius: 5px ;
+    padding-top: 15px; 
+}
+#content .member-name{
+    font-size: 15px;
+    text-align: center;
+}
+
+
+
+
+#footer{
+
+}
