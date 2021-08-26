@@ -7,6 +7,11 @@
     --height : 46px;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
+
 body{
     font-family:'Lato',sans-serif ;
     font-size: 100%;
@@ -527,4 +532,13 @@ footer .social-list a:hover{
 .text-left i[class*="ti-"]{
     width: 30px;
     display: inline-block;
+}
+@media screen and (max-width :600px){
+    #contact .mobile{
+        width: 100%;
+        padding-top: 16px;
+    }
+    #contact .contact-form{
+        width: 100%;
+    }
 }
