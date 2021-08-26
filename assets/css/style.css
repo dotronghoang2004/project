@@ -531,7 +531,7 @@ footer .social-list a:hover{
 @media screen and (max-width: 600px) {
     #contact .mobile {
          width: 100%;
-         padding :16px;
+         padding-top :16px;
 }
     #contact .form{
        width:100%;
