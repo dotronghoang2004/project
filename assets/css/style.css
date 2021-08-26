@@ -10,15 +10,41 @@
 body{
     font-family:'Lato',sans-serif ;
     font-size: 100%;
+    position: relative;
+ 
 }
-
+/*common(nhung class chung)*/
+ul{
+    list-style-type: none;
+}
 .clearfix{
     clear: both;
 }
-
-#main{
-
+.text-left{
+    text-align: left;
 }
+.row{
+     margin-left: -8px;
+     margin-right: -8px;
+}
+.col{
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.col-third{
+    width: 33.33333%;
+}
+.col-half{
+    width: 50%;
+}
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+/*main*/
+
 
 #header{
     height: 46px;
@@ -29,6 +55,8 @@ body{
     width: 100%;
     z-index: 1;
 }
+
+/* Begin navigation*/ 
 
 #nav{
    display: inline-block; 
@@ -74,23 +102,63 @@ body{
     width: 160px;
     box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.3); 
 }
+
+#nav .nav-hide-none{
+    float: left;
+}
+#nav .nav-hide-none li:hover{
+    background-color: #ccc;
+}
+
 #nav .subnav a{
     color:black;
     padding: 0 16px;
     line-height: 38px; 
 }
+
 #nav .subnav li{
     width: 100%;
 }
+
 #nav .nav-arrow-down{
     font-size: 12px;
 }
+
 #search-btn{
     display: inline-block;
     
 }
-#header #search-btn{
+#header #menu-btn{
+    display: none;
+    color: white;
+    padding: 0 24px;
+    line-height: 46px;
+}
+#header .hide-menu-mobile li{
+    border: 1px solid rgb(0, 0, 0);
+    padding: 12px 24px;
+   
+}
+#header .hide-menu-mobile li:hover{
+    cursor: pointer ;
+    background-color: #ccc;
+}
+
+#header .hide-menu-mobile{
+    background-color: black;
+    color: white;
+    
+    position: absolute;
+    top : 46px;
+    right: 0;
+    left: 0;
+}
+
+#header #search-btn , #menu-btn{
     float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
     padding: 0 24px;
 }
 #search-btn .search-icon {
@@ -100,17 +168,26 @@ body{
 }
 #header #search-btn:hover {
     background-color: red;
+    cursor: pointer;
 }
+@media screen  and (max-width : 600px){
+    #nav .nav-hide-none , #search-btn{
+        display: none;
+    }
+    #header #menu-btn{
+        display: inline-block;
+        
+    }
+}
+/*end navigation*/
 
-
+/* Begin Sliderrrrrrrr*/ 
 #slider{
     margin-top: var(--height);
     width: 100%;
-}
-
-#slider {
     position: relative;
 }
+
 
 #slider .text-content{
     position: absolute; 
@@ -118,7 +195,7 @@ body{
     bottom: 47px;
     width: 100%;
     color: white;
-
+    display: block;
 }
 
 #slider .text-heading{
@@ -131,29 +208,33 @@ body{
     padding-top: 25px;
 
 }
+/* end Sliderrrrrrrr*/ 
 
+/* Begin content*/ 
 
 #content{
-    
+    width: 100%;
+    /*text-align: center*/
+/* Begin content band*/ 
 }
-#content .content-heading{
+#content .content-section{
     background-color: #fff;
     color: black;
     margin-left:  auto;
     margin-right: auto;
-    padding: 64px 16px; 
+    padding: 64px 16px 96px; 
     text-align: center;
     /*width: 100%;*/
     display: block;
-    max-width: 800px;
+    /*max-width: 800px;*/
 }   
-#content .content-heading .content-paragraph{
+#content .content-section .content-paragraph{
     text-align: justify;
     margin: 15px 0px 0px;
     font-size: 15px;
     line-height: 1.4;
 }
-#content .content-heading .content-title{
+#content .content-section .content-title{
     margin: 10px 0px;
     font-size: 30px;
     font-weight: 500;
@@ -161,16 +242,12 @@ body{
     letter-spacing: 4px;
 }
 
-#content .content-heading .content-slogan{
+#content .content-section .content-slogan{
     margin: 15px 0px;
     font-size: 15px;
     opacity: 0.6;
 }
 
-#content .content-middle{
-    background-color: black;
-    color: white;
-}
 
 #content .content-footer{
     background-color: white;
@@ -179,23 +256,275 @@ body{
 #content .content-member{
     padding: 47px 0px 32px ;
 }
-#content  .member-item{
-    float: left;
-    width: 33.33333%;
-}
+
 #content .content-member-img{
-    width: 60%;
+    /*width: 60%;*/
     border-radius: 5px ;
-    padding-top: 15px; 
+    /*padding-top: 15px;*/ 
+}
+.content-heading .img-bottom{
+    margin-bottom: 15px;
 }
 #content .member-name{
     font-size: 15px;
     text-align: center;
+    margin: 15px 0px;
+}
+@media  screen and ( min-width : 601px) {
+    .content-section .member-item{ 
+        width: 33.33333%;
+        display: block;
+        float: left;
+    }
+}
+@media  screen and (max-width:600px){
+    #slider .text-content{
+       display:none;
+    }
 }
 
+#content .content-2{
+    color: white;
+    background-color: black;
+}
+/* end content*/ 
+
+#content .content-2  .list-tour {
+    border: 1px solid black;
+    list-style-type: none;
+    background-color: white;
+    color: black;
+}
+
+.content-2 .list-tour > li{
+    text-align: left;
+    padding: 8px 16px;
+    border-top: 1px solid #ccc;
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.content-2 .list-tour >li > .tag-name{
+    background-color: red;
+    color: white;
+    border: 1px solid red ;
+    display: inline-block;
+    margin-left: 16px;
+    padding: 0 8px;
+} 
+
+.content-2 .list-tour >li > .tag-number{
+    float: right;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    padding: 0 8px;
+    margin-right: 16px;
+    text-align: center;
+}
+.buy-tickets{
+    padding: 32px 8px;
+    display: inline-block;
+}
+.buy-tickets .tickets-1{
+    float: left;
+    width: 33.33333%;
+    margin: 0 0 16px ;
+    padding: 0 8px;
+}
+
+div .ticket-text{
+    background-color: white;
+    text-align: left;
+    color: black;
+    padding: 0.150px 16px;
+    font-size: 15px;
+}
+.ticket-text p {
+    margin: 15px 0;
+}
+
+p.tag-text{
+    opacity: 0.6;
+}
+img{
+    vertical-align: middle;
+}
+.tickets-1 >.ticket-text > button {
+    background-color: black;
+    color: white;
+    margin-bottom: 16px;
+    padding: 8px 16px;
+    line-height: 22px;
+    border:  none;
+    font-size: 15px;
+}
+.buy-tickets .tickets-1 button:hover{
+    background-color: #ccc;
+    cursor: pointer;
+}
+.buy-tickets .tickets-1 .img-tickets:hover{
+    opacity: 0.6;
+    cursor: pointer;
+
+}
+
+@media screen and (max-width:600px){
+    #tour .tickets-1{
+        width: 100%;
+    }
+    #contain-modal .modaltickets{
+        padding: 50px 10px;
+    }
+}
+
+ /* begin modal tiket */
+  
+#contain-modal{
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+}
+#contain-modal #modaltickets{
+    padding: 100px 0px;
+    margin: 0 auto;
+    display: none;
+    width: 900px;
+    max-width: calc(100% - 36px);
+    animation: modalFaceIn ease 1s;
+}
+
+#modaltickets header{
+    background-color: #009688;
+    color: white;
+    padding : 32px 16px;
+    text-align: center;
+    position: relative;
+}
+.pay-tickets{
+    padding: 0.15px 16px;
+    width: 100%;
+    background-color: white;
+    
+}
+
+input{
+    padding: 8px;
+    text-align: left;
+}
+
+#modaltickets .pay-tickets{
+    background-color: white;
+}
+#modaltickets .pay-tickets .pay-it{
+    border: none;
+    background-color: #009688; 
+    color: white;
+    font-weight: bold; 
+    padding: 16px;
+    line-height: 22px;
+    text-align: center; 
+    margin: 16px 0px;
+}
+#modaltickets .pay-tickets .pay-it:hover{
+    background-color: #ccc;
+}
+
+#modaltickets h1{
+    line-height: 65px;
+}
+
+#modaltickets .pay-tickets .close-pay-it{
+    border: none;
+    color: white;
+    background-color: red;
+    padding: 8px 16px;
+    margin: 16px 0px;
+    font-size: 15px;
+    font-weight: bold; 
+    float: left;
+}
+
+#modaltickets .pay-tickets .close-pay-it:hover{
+    background-color: #ccc;
+}
+p.text-help{
+    float: right;
+    color: rgb(0, 0, 0);
+    margin: 15px 0px;
+}
+span.close-header{
+    float: right;
+    padding: 8px 16px;
+    line-height: 36px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+}
+span.close-header:hover{
+    background-color: #ccc;
+}
+ /* end modal tiket */
 
 
 
-#footer{
+/*keyFrame*/
+@keyframes modalFaceIn {
+    from{
+        opacity: 0;
+        transform: translateY(-200) ;
+    }
+    to{
+        opacity: 1;
+        transform: translateY(-100) ;
+    }
+}
 
+.contact-content{
+    padding-top: 32px;
+}
+ .form-control{
+    font-size: 15px;
+    width: 100%;
+    border: 1px solid #ccc;
+    line-height: 22px;
+}
+.col-full{
+    width: 100%;
+}
+.row .form-submit-btn{
+    background-color: black;
+    border: none;
+    color: white;
+    float: right;
+    padding: 8px 16px;
+    margin-right: 8px ;
+    font-size: 15px;
+    line-height: 22px;
+}
+.row .form-submit-btn:hover{
+    background-color: #ccc;
+    cursor: pointer;
+}
+footer{
+    padding: 64px 16px;
+    text-align: center;
+}
+footer .social-list{
+    font-size: 24px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6);
+}
+footer .social-list a:hover{
+    color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+.text-left i[class*="ti-"]{
+    width: 30px;
+    display: inline-block;
 }
