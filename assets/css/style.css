@@ -532,6 +532,18 @@ footer .social-list a:hover{
 .text-left i[class*="ti-"]{
     width: 30px;
     display: inline-block;
+<<<<<<< HEAD
+=======
+}
+@media screen and (max-width: 600px) {
+    #contact .mobile {
+         width: 100%;
+         padding-top :16px;
+}
+    #contact .contact-form{
+       width:100%;
+}
+>>>>>>> b5bb7edd68b853a8707372d8fdf6db5f0a231502
 }
 @media screen and (max-width :600px){
     #contact .mobile{
